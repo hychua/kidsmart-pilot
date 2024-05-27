@@ -11,6 +11,8 @@ from dash import html
 from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 
+
+
 app = dash.Dash()
 app.layout = html.Div([
     html.Div([    html.Div(' ',
@@ -278,6 +280,8 @@ def generate_chart(n_clicks, hits, conversion, revenue, times, sample, percent):
     fig.update_traces(textposition='outside', textinfo='value+label'),
     fig.update_layout(margin=dict(t=0, b=0, l=0, r=0))                  
     return fig
+
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
 
 if __name__ == '__main__':
     app.run_server()
