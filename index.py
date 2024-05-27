@@ -23,7 +23,7 @@ app.layout = html.Div([
     html.Div(id='page-content', children=[])
 ])
 
-#app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
 
 @app.callback(Output('page-content', 'children'),
             [Input('url', 'pathname')])
