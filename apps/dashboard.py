@@ -1,21 +1,16 @@
-import os
 import pathlib
-import re
 
 from app import app
 
-import dash
 from dash import dcc
 from dash import html
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output
 import dash_table
-import plotly.graph_objs as go
 import plotly.express as px
 import dash_daq as daq
 
 import pandas as pd
 import numpy as np
-import cufflinks as cf
 from apps.analytics import( create_plot_metric, 
                                     YEARS_INVENTORY,
                                     INVENTORY_TABLE_COLUMNS,
