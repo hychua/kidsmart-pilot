@@ -13,7 +13,7 @@ import dashboard
 
 
 app.layout = html.Div([
-    dcc.Location(id='url', refresh=False, pathname = '/apps/sales-dashboard'),
+    dcc.Location(id='url', refresh='callback-nav'),
     html.Div([
         dcc.Link('Sales Dashboard|', href='/apps/sales-dashboard'),
         dcc.Link('Inventory Dashboard  |  ', href='/apps/inventory-dashboard'),
@@ -40,4 +40,4 @@ def display_page(pathname):
     
 
 if __name__ == '__main__':
-    app.run_server(host='127.0.0.1',port=10000)
+    app.run_server(debug=False)
