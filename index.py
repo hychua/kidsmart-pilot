@@ -2,7 +2,7 @@
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
-import os
+
 
 # Connect to main app.py file
 from app import app
@@ -37,7 +37,6 @@ def display_page(pathname):
     else:
         return "404 Page Error! Please choose a link"
     
-app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 4000)))
 
 if __name__ == '__main__':
     app.run_server(debug=False)
