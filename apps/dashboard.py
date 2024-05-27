@@ -5,10 +5,9 @@ from app import app
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
-import dash_table
+from dash import dash_table
 import plotly.express as px
 import dash_daq as daq
-
 import pandas as pd
 import numpy as np
 from apps.analytics import( create_plot_metric, 
