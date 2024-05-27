@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output
 
 # Connect to main app.py file
 from app import app
-
+import os
 
 # Connect to your app pages
 from apps import dashboard
@@ -23,6 +23,7 @@ app.layout = html.Div([
     html.Div(id='page-content', children=[])
 ])
 
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
 
 @app.callback(Output('page-content', 'children'),
             [Input('url', 'pathname')])

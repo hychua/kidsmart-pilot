@@ -1,6 +1,6 @@
   
 import dash
-import os
+
 
 external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -13,7 +13,5 @@ app = dash.Dash(__name__,
                             'content': 'width=device-width, initial-scale=1.0'}]
                 )
 app.title = 'Sales and Inventory Dashboard'
-
-app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
 
 server = app.server
