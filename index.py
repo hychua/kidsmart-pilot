@@ -9,7 +9,7 @@ from app import app
 import os
 
 # Connect to your app pages
-from apps import dashboard
+import dashboard
 
 
 app.layout = html.Div([
@@ -23,7 +23,7 @@ app.layout = html.Div([
     html.Div(id='page-content', children=[])
 ])
 
-app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
+#app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
 
 @app.callback(Output('page-content', 'children'),
             [Input('url', 'pathname')])
@@ -40,4 +40,4 @@ def display_page(pathname):
     
 
 if __name__ == '__main__':
-    app.run_server(debug=True, use_reloader=False)
+    app.run_server(debug=False)
