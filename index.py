@@ -148,7 +148,7 @@ app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
 def render_content(tab):
     if tab == 'sales-dash':
         return html.Div(
-    id="root",
+    id="sales-dash",
     children=[
         html.Div(
             id="header",
@@ -293,7 +293,7 @@ def render_content(tab):
 )
     elif tab == 'inventory-dash':
         return html.Div(
-    id="root",
+    id="inv-dash",
     children=[
         html.Div(
             id="header",
