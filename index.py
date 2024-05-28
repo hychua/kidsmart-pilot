@@ -116,9 +116,9 @@ layout_index = html.Div([
 
     html.Div([
         dcc.Tabs(id='tabs', value='sales-dash', children=[
-        dcc.Tab(label='Sales Dashboard', value='sales-dash',style=tab_style, selected_style=tab_selected_style),
-        dcc.Tab(label='Inventory Dashboard', value='inventory-dash',style=tab_style, selected_style=tab_selected_style),
-        dcc.Tab(label='Upload Data', value='upload-data',style=tab_style, selected_style=tab_selected_style),
+            dcc.Tab(label='Sales Dashboard', value='sales-dash',style=tab_style, selected_style=tab_selected_style),
+            dcc.Tab(label='Inventory Dashboard', value='inventory-dash',style=tab_style, selected_style=tab_selected_style),
+            dcc.Tab(label='Upload Data', value='upload-data',style=tab_style, selected_style=tab_selected_style),
 
         ]),
     
@@ -129,10 +129,6 @@ layout_index = html.Div([
 
 
 app.layout = layout_index
-
-app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
-
-
 
 
 # Tab callbacks
@@ -1782,6 +1778,9 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
     )
     return fig         
 # end from dashboard.py
+
+
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
 
 if __name__ == '__main__':
     app.run_server(debug=False)
