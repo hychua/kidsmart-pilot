@@ -62,15 +62,16 @@ METRIC_DICT = {
     
 }
 
-# Create layout
 
-layout = html.Div(
+
+# Create Pages
+layout1 = html.Div(
     id="root",
     children=[
         html.Div(
             id="header",
             children=[
-                html.Img(id="logo", src=app.get_asset_url("logo.png")),
+                
                 html.H4(children="Sales Performance Dashboard"),
                 html.P(
                     id="description",
@@ -1708,4 +1709,5 @@ def set_worse_turnover_graph(year, selected_brand,selected_region):
 
     )
     return fig         
+
 
