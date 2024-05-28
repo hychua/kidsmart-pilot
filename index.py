@@ -137,7 +137,7 @@ url_bar_and_content_div = html.Div([
 
 app.layout = url_bar_and_content_div
 
-app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
 
 
 
