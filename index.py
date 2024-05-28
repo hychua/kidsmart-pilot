@@ -9,7 +9,8 @@ from app import app
 import os
 
 # Connect to your app pages
-import dashboard
+from dashboard import( layout1, layout2, layout3
+                                    )
 
 # define tab styles
 tab_style = {
@@ -78,11 +79,11 @@ app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 3000)))
               Input('tabs', 'value'))
 def render_content(tab):
     if tab == 'sales-dash':
-        return dashboard.layout1
+        return layout1
     elif tab == 'inventory-dash':
-        return dashboard.layout2
+        return layout2
     elif tab == 'upload-data':   
-        return dashboard.layout3
+        return layout3
 
 
 if __name__ == '__main__':
