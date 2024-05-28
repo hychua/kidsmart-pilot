@@ -127,15 +127,8 @@ layout_index = html.Div([
 
 ])
 
-url_bar_and_content_div = html.Div([
-    
-    dcc.Location(id='url', refresh=False),
-    layout_index,
-    html.Div(id='page-content')
-])
 
-
-app.layout = url_bar_and_content_div
+app.layout = layout_index
 
 app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
 
