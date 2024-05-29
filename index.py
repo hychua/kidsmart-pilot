@@ -355,7 +355,6 @@ def render_content(tab):
                         html.Div(
                             id="header",
                             children=[
-                                html.Img(id="logo", src=app.get_asset_url("logo.png")),
                                 html.H4(children="Inventory Monitoring Dashboard"),
                                 html.P(
                                     id="description",
