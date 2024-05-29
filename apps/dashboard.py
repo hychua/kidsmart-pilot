@@ -12,7 +12,8 @@ from apps.analytics import( create_plot_metric,
                                     INVENTORY_TABLE_COLUMNS,
                                     ALL_BRANDS,
                                     ALL_CAT,
-                                    ALL_TEXT
+                                    ALL_TEXT,
+                                    df_cat_data
                                     )
 import base64
 import datetime
@@ -783,8 +784,6 @@ def display_selected_data2(selected_data, year):
 
     if selected_data == "total_sales":
 
-        df_cat_data = pd.read_csv(DATA_PATH.joinpath("cat_text.csv"),parse_dates=True)
-        
         dff['Size'] = np.sqrt(dff[curr_metric_col])
         dff['Size'] = np.sqrt(dff['Size']).round(0)
         merged_df = pd.merge(dff,df_cat_data, on='Category')
