@@ -579,43 +579,66 @@ def render_content(tab):
         return html.Div([    html.Div(' ',
                 style={'backgroundColor':'rgb(0,123,255)','height':42}),
                 html.Div([
-                    html.H2('Upload Data',
-                            style={'color':'rgb(0,123,255)'}),
-                    
-                    html.Div([
-                        html.Div([html.Label('Orders:',
-                               style={'font-weight':'bold'}),
-                                 html.Br(),html.Br(),
-                                 html.Label('Products:',
-                               style={'font-weight':'bold'}),
-                                 html.Br(),html.Br(),
-                                html.Label('Categories:',
-                               style={'font-weight':'bold'}),
-                                html.Br(),html.Br(),
-                               ],
+                    dcc.Upload(html.Button('Upload orders.csv File')),
 
-                                style={'float':'left','display': 'inline-block'}),
-                        
-                        html.Div([
-                            dcc.Input(id='orders-file',value='orders.csv', type='text'),
-                            html.Br(),html.Br(),
-                            dcc.Input(id='products-file',value='products.csv', type='text'),
-                            html.Br(),html.Br(),    
-                            dcc.Input(id='categories-file',value='categories.csv', type='text'),
-                            html.Br(),html.Br(), 
-                            
-                        html.Button(
-                        id='submit-button',
-                        n_clicks=0,
-                        children='Submit',
-                        style={'fontSize':18,
-                               'color':'rgb(255,255,255)',
-                               'backgroundColor':'rgb(0,123,255)',
-                               'borderRadius':5,
-                               'height':42})],
-                            style={'float':'left','display':'inline-block',
-                                   'margin-left':20}
-                             )],
+    html.Hr(),
+
+    dcc.Upload(html.A('Upload orders.csv File')),
+
+    html.Hr(),
+
+    dcc.Upload([
+        'Drag and Drop or ',
+        html.A('Select a File')
+    ], style={
+        'width': '100%',
+        'height': '60px',
+        'lineHeight': '60px',
+        'borderWidth': '1px',
+        'borderStyle': 'dashed',
+        'borderRadius': '5px',
+        'textAlign': 'center'
+    }),
+dcc.Upload(html.Button('Upload inventory.csv File')),
+
+    html.Hr(),
+
+    dcc.Upload(html.A('Upload inventory.csv File')),
+
+    html.Hr(),
+
+    dcc.Upload([
+        'Drag and Drop or ',
+        html.A('Select a File')
+    ], style={
+        'width': '100%',
+        'height': '60px',
+        'lineHeight': '60px',
+        'borderWidth': '1px',
+        'borderStyle': 'dashed',
+        'borderRadius': '5px',
+        'textAlign': 'center'
+    }),
+dcc.Upload(html.Button('Upload category.csv File')),
+
+    html.Hr(),
+
+    dcc.Upload(html.A('Upload category.csv File')),
+
+    html.Hr(),
+
+    dcc.Upload([
+        'Drag and Drop or ',
+        html.A('Select a File')
+    ], style={
+        'width': '100%',
+        'height': '60px',
+        'lineHeight': '60px',
+        'borderWidth': '1px',
+        'borderStyle': 'dashed',
+        'borderRadius': '5px',
+        'textAlign': 'center'
+    })
                     style={'float':'left','display':'inline-block'}
                     )],
                             style={'float':'left','display': 'inline-block',
