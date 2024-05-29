@@ -783,7 +783,7 @@ def display_selected_data2(selected_data, year):
 
     if selected_data == "total_sales":
 
-        df_cat_data = pd.read_csv("cat_text.csv",parse_dates=True)
+        df_cat_data = pd.read_csv(DATA_PATH.joinpath("cat_text.csv"),parse_dates=True)
         
         dff['Size'] = np.sqrt(dff[curr_metric_col])
         dff['Size'] = np.sqrt(dff['Size']).round(0)
