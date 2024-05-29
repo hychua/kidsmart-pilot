@@ -130,6 +130,74 @@ layout_index = html.Div([
 
 app.layout = layout_index
 
+layout3 = html.Div([    html.Div(' ',
+                style={'backgroundColor':'rgb(0,123,255)','height':42}),
+                html.Div([
+                    dcc.Upload(html.Button('Upload orders.csv File')),
+
+                    html.Hr(),
+                
+                    dcc.Upload(html.A('Upload orders.csv File')),
+                
+                    html.Hr(),
+                
+                    dcc.Upload([
+                        'Drag and Drop or ',
+                        html.A('Select a File')
+                    ], style={
+                        'width': '100%',
+                        'height': '60px',
+                        'lineHeight': '60px',
+                        'borderWidth': '1px',
+                        'borderStyle': 'dashed',
+                        'borderRadius': '5px',
+                        'textAlign': 'center'
+                    }),
+                dcc.Upload(html.Button('Upload inventory.csv File')),
+                
+                    html.Hr(),
+                
+                    dcc.Upload(html.A('Upload inventory.csv File')),
+                
+                    html.Hr(),
+                
+                    dcc.Upload([
+                        'Drag and Drop or ',
+                        html.A('Select a File')
+                    ], style={
+                        'width': '100%',
+                        'height': '60px',
+                        'lineHeight': '60px',
+                        'borderWidth': '1px',
+                        'borderStyle': 'dashed',
+                        'borderRadius': '5px',
+                        'textAlign': 'center'
+                    }),
+                dcc.Upload(html.Button('Upload category.csv File')),
+                
+                    html.Hr(),
+                
+                    dcc.Upload(html.A('Upload category.csv File')),
+                
+                    html.Hr(),
+                
+                    dcc.Upload([
+                        'Drag and Drop or ',
+                        html.A('Select a File')
+                    ], style={
+                        'width': '100%',
+                        'height': '60px',
+                        'lineHeight': '60px',
+                        'borderWidth': '1px',
+                        'borderStyle': 'dashed',
+                        'borderRadius': '5px',
+                        'textAlign': 'center'
+                    }
+                                    
+                                    )],
+                                            style={'float':'left','display': 'inline-block',
+                                                   'margin-left':50})
+                                    ])
 
 # Tab callbacks
 @app.callback(Output('tabs-content', 'children'),
@@ -576,74 +644,7 @@ def render_content(tab):
                     ],
                 )
     elif tab == 'upload-data':   
-        return html.Div([    html.Div(' ',
-                style={'backgroundColor':'rgb(0,123,255)','height':42}),
-                html.Div([
-                    dcc.Upload(html.Button('Upload orders.csv File')),
-
-    html.Hr(),
-
-    dcc.Upload(html.A('Upload orders.csv File')),
-
-    html.Hr(),
-
-    dcc.Upload([
-        'Drag and Drop or ',
-        html.A('Select a File')
-    ], style={
-        'width': '100%',
-        'height': '60px',
-        'lineHeight': '60px',
-        'borderWidth': '1px',
-        'borderStyle': 'dashed',
-        'borderRadius': '5px',
-        'textAlign': 'center'
-    }),
-dcc.Upload(html.Button('Upload inventory.csv File')),
-
-    html.Hr(),
-
-    dcc.Upload(html.A('Upload inventory.csv File')),
-
-    html.Hr(),
-
-    dcc.Upload([
-        'Drag and Drop or ',
-        html.A('Select a File')
-    ], style={
-        'width': '100%',
-        'height': '60px',
-        'lineHeight': '60px',
-        'borderWidth': '1px',
-        'borderStyle': 'dashed',
-        'borderRadius': '5px',
-        'textAlign': 'center'
-    }),
-dcc.Upload(html.Button('Upload category.csv File')),
-
-    html.Hr(),
-
-    dcc.Upload(html.A('Upload category.csv File')),
-
-    html.Hr(),
-
-    dcc.Upload([
-        'Drag and Drop or ',
-        html.A('Select a File')
-    ], style={
-        'width': '100%',
-        'height': '60px',
-        'lineHeight': '60px',
-        'borderWidth': '1px',
-        'borderStyle': 'dashed',
-        'borderRadius': '5px',
-        'textAlign': 'center'
-    })
-                    style={'float':'left','display':'inline-block'}
-                    )],
-                            style={'float':'left','display': 'inline-block',
-                                   'margin-left':50})
-                    ])
+        return layout3
 
 # Create call back functions
 
